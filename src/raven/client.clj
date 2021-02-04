@@ -301,7 +301,7 @@
         {:keys [key secret uri]} (parse-dsn dsn)
         sig                      (sign json-payload ts key secret)]
     (d/chain
-     (http/post (str uri "/api/store/")
+     (http/post (str uri "/api/0/")
                 (merge (select-keys context [:pool :middleware :pool-timeout
                                              :response-executor :request-timeout
                                              :read-timeout :connection-timeout])
